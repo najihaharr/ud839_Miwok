@@ -46,20 +46,35 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
         });
-    }
 
-    public void openFamilyList (View view) {
-        Intent intent = new Intent(this, FamilyMembersActivity.class);
-        startActivity(intent);
-    }
+        TextView family = (TextView) findViewById(R.id.family);
 
-    public void openColorsList (View view) {
-        Intent intent = new Intent(this, ColorsActivity.class);
-        startActivity(intent);
-    }
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                startActivity(familyIntent);
+            }
+        });
 
-    public void openPhrasesList (View view) {
-        Intent intent = new Intent(this, PhrasesActivity.class);
-        startActivity(intent);
+        TextView colors = (TextView) findViewById(R.id.colors);
+
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
     }
 }

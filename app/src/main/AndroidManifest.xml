@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".PhrasesActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"
             android:label="@string/category_phrases">
             <meta-data
@@ -18,6 +19,7 @@
         </activity>
         <activity
             android:name=".ColorsActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"
             android:label="@string/category_colors">
             <meta-data
@@ -26,6 +28,7 @@
         </activity>
         <activity
             android:name=".FamilyMembersActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"
             android:label="@string/category_family">
             <meta-data
@@ -34,6 +37,7 @@
         </activity>
         <activity
             android:name=".NumbersActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"
             android:label="@string/category_numbers">
             <meta-data
