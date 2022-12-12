@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 // import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,18 +35,17 @@ public class MainActivity extends AppCompatActivity {
         /** 2. Create a new object instance of the event listener (using the constructor) in MainActivity.java
          *  3. Attach the listener to the view in MainActivity.java */
 
-        NumbersClickListener clickListener = new NumbersClickListener();
-
         // Find the view that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.numbers);
+
         // Set a clicklistener on that View
-        numbers.setOnClickListener(clickListener);
-    }
-
-
-    public void openNumbersList (View view) {
-        Intent intent = new Intent(this, NumbersActivity.class);
-        startActivity(intent);
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
     }
 
     public void openFamilyList (View view) {
