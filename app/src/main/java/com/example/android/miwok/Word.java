@@ -15,18 +15,23 @@ public class Word {
     // -1 because its out of the range of all the possible valid resource ID
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    // Audio resource id for the word
+    private int mAudioResourceId;
+
     // Create the constructors - looks like a method declaration
     // Name of constructor has to match the class name exactly
     // The constructor does not have a return type
-    public Word (String defaultTranslation, String miwokTranslation) {
+    public Word (String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
-    public Word (String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word (String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImgResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     /* Get the
@@ -48,5 +53,9 @@ public class Word {
      */
     public boolean hasImage() {
         return mImgResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    public int getAudioResourceId() {
+        return mAudioResourceId;
     }
 }
