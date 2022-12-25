@@ -84,6 +84,14 @@ public class NumbersActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // When the activity is stopped, release the media player resource because we won't
+        // be playing anymore sounds
+        releaseMediaPlayer();
+    }
+
     /**
      * Clean up the media player by releasing its resources.
      */
@@ -94,9 +102,9 @@ public class NumbersActivity extends AppCompatActivity {
             // because we no longer need it.
             mMediaPlayer.release();
 
-            // Set the media player back to null. For our code, we've decided that
-            // setting the media player to null is an easy way to tell that the media player
-            // is not configured to play an audio file at the moment.
+            // Set the media player back to null if it is not currently configured to play a sound.
+            // For our code, we've decided that setting the media player to null is an easy way to tell
+            // that the media player is not configured to play an audio file at the moment.
             mMediaPlayer = null;
         }
     }
